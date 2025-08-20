@@ -89,8 +89,8 @@ export function HomePage() {
                 </h1>
                 
                 <p className="text-xl text-gray-300 leading-relaxed max-w-xl font-normal">
-                  Where ambitious UTM students transform breakthrough ideas into thriving startups. 
-                  Join the <span className="font-semibold text-orange-400">most innovative startup community</span> at University of Toronto Mississauga.
+                  We’re a student‑run community at UTM. We build startups together, learn by doing, and
+                  show up for each other. If you’re looking for a second home on campus, you’re in the right place.
                 </p>
               </div>
 
@@ -177,14 +177,14 @@ export function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-5xl lg:text-6xl mb-6 font-extrabold">
-              <span className="text-white">Accelerate Your</span><br />
+              <span className="text-white">Build With Us</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                Startup Journey at UTM
+                at UTM
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-normal">
-              From concept to launch, we provide UTM students with the <span className="font-semibold text-orange-400">tools, network, and expertise</span> 
-              to turn your entrepreneurial vision into reality.
+              Weekly co‑working, hands‑on workshops, mentors who’ve been there, and friends who keep you accountable.
+              Everything is made by students, for students.
             </p>
           </motion.div>
 
@@ -242,7 +242,7 @@ export function HomePage() {
               </span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto font-normal">
-              Ready to start your entrepreneurial journey? Here's how you can <span className="font-semibold text-orange-400">connect with us</span>.
+              Want in? Here’s how to plug into the community.
             </p>
           </motion.div>
 
@@ -361,8 +361,7 @@ export function HomePage() {
             </h2>
             
             <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto font-normal">
-              Join a community of <span className="font-semibold text-orange-400">ambitious UTM entrepreneurs</span> who are building 
-              the next generation of groundbreaking startups right here on campus.
+              We’re building real things with real people — right here on campus. No ego, just momentum.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,9 +1,25 @@
 import React from 'react';
+import LucreziaImg from '../../assets/Lucrezia.jpeg';
+import MichalImg from '../../assets/Michal.jpeg';
+import TakatoshiImg from '../../assets/Takatoshi.jpeg';
 import { motion } from 'motion/react';
 import { Users, Heart, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 
 export function TeamPage() {
+  const members = [
+    { name: 'Jacobo Isaza', role: 'Co-founder', photo: null },
+    { name: 'Michal Buczek', role: 'Founder', photo: MichalImg },
+    { name: 'Damilare', role: 'CFO', photo: null },
+    { name: 'Lucrezia Derossi', role: 'CMO', photo: LucreziaImg },
+    { name: 'Takatoshi Lee', role: 'CTO', photo: TakatoshiImg },
+  ];
+
+  const initials = (name: string) => {
+    const parts = name.trim().split(/\s+/);
+    const letters = parts.slice(0, 2).map(p => p[0]?.toUpperCase() ?? '');
+    return letters.join('');
+  };
   return (
     <div className="pt-20 lg:pt-24">
       {/* Hero Section */}
@@ -37,7 +53,7 @@ export function TeamPage() {
             </h1>
             
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              The passionate individuals driving innovation and entrepreneurship at the University of Toronto Mississauga.
+              We’re UTM students building Groundup Startups together — a community where we help each other launch and grow real ventures.
             </p>
           </motion.div>
         </div>
@@ -55,41 +71,23 @@ export function TeamPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl p-8 transform hover:scale-105 transition-all duration-300">
-                <div className="bg-black/20 backdrop-blur-xl rounded-2xl p-8">
-                  <Users className="h-16 w-16 text-white mx-auto mb-6" />
-                  
-                  <h2 className="text-3xl text-white mb-4">
-                    We're Building Something Amazing
-                  </h2>
-                  
-                  <p className="text-white/90 text-lg mb-6 leading-relaxed">
-                    Our founding team is working hard to create the best entrepreneurship experience for UTM students. 
-                    We're assembling a diverse group of passionate individuals who share our vision of fostering innovation on campus.
-                  </p>
-                  
-                  <div className="flex items-center justify-center space-x-2 mb-8">
-                    <Heart className="h-5 w-5 text-white" />
-                    <span className="text-white">Built by students, for students</span>
-                    <Heart className="h-5 w-5 text-white" />
-                  </div>
-                  
-                  <div className="grid md:grid-cols-3 gap-6 mb-8">
-                    <div className="bg-white/10 rounded-xl p-4">
-                      <h3 className="text-white font-semibold mb-2">Diverse Backgrounds</h3>
-                      <p className="text-white/80 text-sm">Business, Engineering, Computer Science, and more</p>
-                    </div>
-                    <div className="bg-white/10 rounded-xl p-4">
-                      <h3 className="text-white font-semibold mb-2">UTM Focused</h3>
-                      <p className="text-white/80 text-sm">Dedicated to serving our campus community</p>
-                    </div>
-                    <div className="bg-white/10 rounded-xl p-4">
-                      <h3 className="text-white font-semibold mb-2">Innovation Driven</h3>
-                      <p className="text-white/80 text-sm">Passionate about entrepreneurship and startups</p>
+            <div className="max-w-6xl mx-auto">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {members.map((m) => (
+                  <div key={m.name} className="bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-6 flex items-center gap-4">
+                    {m.photo ? (
+                      <img src={m.photo} alt={m.name} className="h-16 w-16 rounded-xl object-cover" />
+                    ) : (
+                      <div className="h-16 w-16 rounded-xl bg-orange-500/20 border border-orange-500/40 flex items-center justify-center text-orange-300 font-bold">
+                        {initials(m.name)}
+                      </div>
+                    )}
+                    <div>
+                      <div className="text-white font-semibold">{m.name}</div>
+                      <div className="text-orange-400 text-sm font-medium">{m.role}</div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             </div>
           </motion.div>

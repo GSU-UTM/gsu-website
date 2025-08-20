@@ -77,16 +77,15 @@ export function AboutPage() {
             </div>
             
             <h1 className="text-4xl lg:text-6xl mb-6">
-              <span className="text-white">Empowering</span><br />
+              <span className="text-white">Students First.</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                UTM Entrepreneurs
+                Startups Together.
               </span>
             </h1>
             
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Groundup Startups UTM is the premier entrepreneurship community at the University of Toronto Mississauga. 
-              We're dedicated to fostering innovation, supporting student-led startups, and building the next generation 
-              of successful entrepreneurs right here on our campus.
+              We started as friends hacking on ideas after class. Now we’re a growing UTM community
+              where anyone curious about building can find teammates, mentors, and momentum.
             </p>
           </motion.div>
         </div>
@@ -105,16 +104,15 @@ export function AboutPage() {
               viewport={{ once: true }}
             >
               <h2 className="text-3xl lg:text-4xl mb-6">
-                <span className="text-white">Our Mission at</span><br />
+                <span className="text-white">Our Mission</span><br />
                 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                  UTM
+                  Build a second home for builders
                 </span>
               </h2>
               
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                To create an inclusive, supportive environment where UTM students can explore entrepreneurship, 
-                develop innovative solutions, and build successful startups that make a positive impact on our 
-                campus community and beyond.
+                We make it easier to start. Show up, find your people, try things, and learn by building.
+                No gatekeeping — just a supportive crew that wants to see you win.
               </p>
               
               <p className="text-lg text-gray-300 leading-relaxed">

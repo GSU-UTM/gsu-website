@@ -1,5 +1,5 @@
 import React from 'react';
-import logoImage from 'figma:asset/8156f98016332397912f3a154855282f00d528df.png';
+import logoImage from '../assets/Lucrezia.jpeg';
 
 interface GSULogoUTMProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
