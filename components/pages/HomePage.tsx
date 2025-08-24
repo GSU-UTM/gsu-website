@@ -57,12 +57,6 @@ export function HomePage() {
     <div className="pt-20 lg:pt-24">
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center overflow-hidden">
-        <div>
-          {/* Website updated message */}
-          <div style={{ background: '#e0ffe0', padding: '10px', marginBottom: '20px', textAlign: 'center', fontWeight: 'bold' }}>
-            Website updated
-          </div>
-        </div>
         <div className="absolute inset-0">
           <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-orange-400/20 to-orange-600/20 transform rotate-45"></div>
