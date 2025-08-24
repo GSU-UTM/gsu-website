@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Calendar, Clock, Users, Target, MapPin, ArrowRight } from 'lucide-react';
 import { upcomingEvents, Event } from '../data/eventsData';
 import { Button } from '../ui/button';
+import { FORM_URLS, openForm } from '../lib/forms';
 
 export function EventsPage() {
   const renderEvent = (event: Event, index: number) => (
@@ -25,10 +26,10 @@ export function EventsPage() {
                 <span className="text-white font-bold">{event.week}</span>
               </div>
               <div>
-                <h3 className="text-xl text-white mb-1 group-hover:text-orange-400 transition-colors duration-300">
+                <h3 className="text-xl text-white mb-1 group-hover:text-orange-400 transition-colors duration-300 font-semibold">
                   {event.title}
                 </h3>
-                <div className="flex items-center space-x-4 text-sm text-gray-400">
+                <div className="flex items-center space-x-4 text-sm text-gray-400 font-semibold">
                   <div className="flex items-center space-x-1">
                     <Calendar className="h-4 w-4" />
                     <span>{event.date}</span>
@@ -43,7 +44,7 @@ export function EventsPage() {
           </div>
 
           {/* Event Description */}
-          <p className="text-gray-300 mb-4 leading-relaxed">
+          <p className="text-gray-300 mb-4 leading-relaxed font-semibold">
             {event.description}
           </p>
 
@@ -99,14 +100,14 @@ export function EventsPage() {
               <div className="w-12 h-1 bg-gradient-to-l from-orange-500 to-red-500"></div>
             </div>
             
-            <h1 className="text-6xl lg:text-7xl mb-6">
+            <h1 className="text-6xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="text-white">Upcoming</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Events
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-semibold">
               Join us for an exciting semester of workshops, co-working sessions, and networking events designed 
               to accelerate your entrepreneurial journey at UTM.
             </p>
@@ -129,11 +130,14 @@ export function EventsPage() {
             <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl p-8 max-w-2xl mx-auto">
               <div className="bg-black/20 backdrop-blur-xl rounded-xl p-6">
                 <Users className="h-12 w-12 text-white mx-auto mb-4" />
-                <h2 className="text-2xl text-white mb-4">Events Coming Soon!</h2>
-                <p className="text-white/90 mb-4">
+                <h2 className="hero-text-gsu mb-4">Events Coming Soon!</h2>
+                <p className="text-white/90 mb-4 font-semibold">
                   We're finalizing our exciting lineup of events. Stay tuned for registration details and updates.
                 </p>
-                <Button className="bg-white text-orange-500 hover:bg-gray-100">
+                <Button
+                  onClick={() => openForm(FORM_URLS.join)}
+                  className="bg-white text-orange-500 hover:bg-gray-100 font-semibold"
+                >
                   Join Our Community
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
@@ -153,13 +157,13 @@ export function EventsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl lg:text-5xl mb-6">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Semester</span>{" "}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Schedule
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
               Our comprehensive program designed to take you from idea to launch
             </p>
           </motion.div>
@@ -184,19 +188,20 @@ export function EventsPage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-4xl lg:text-5xl mb-6">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Ready to</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Get Started?
               </span>
             </h2>
             
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto font-semibold">
               Don't miss out on this opportunity to build your startup with fellow UTM entrepreneurs.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
+                onClick={() => openForm(FORM_URLS.join)}
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 shadow-xl"
               >
@@ -207,7 +212,7 @@ export function EventsPage() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-2xl transition-all duration-300"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-2xl transition-all duration-300 font-semibold"
               >
                 Learn More
               </Button>

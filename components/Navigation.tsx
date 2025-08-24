@@ -6,6 +6,7 @@ import { Menu, X, Home, Users, Target, Calendar, Mail } from 'lucide-react';
 interface NavigationProps {
   currentPage: string;
   onPageChange: (page: string) => void;
+  showText?: boolean;
 }
 
 export function Navigation({ currentPage, onPageChange }: NavigationProps) {
@@ -23,7 +24,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
       {/* Desktop Navigation */}
       <nav className="hidden lg:flex fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-orange-500/20">
         <div className="max-w-7xl mx-auto w-full px-6 py-4 flex justify-between items-center">
-          <Logo size="lg" showText={false} />
+          <Logo size="lg" showText={true} />
           
           <div className="flex items-center space-x-2">
             {navItems.map((item) => (
@@ -59,7 +60,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
       {/* Mobile Navigation */}
       <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-orange-500/20">
         <div className="px-4 py-4 flex justify-between items-center">
-          <Logo size="md" showText={false} />
+          <Logo size="md" showText={true} />
           <Button
             variant="ghost"
             size="icon"

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Lightbulb, Users, Target, TrendingUp, Calendar, Clock, MapPin, GraduationCap, Building2, Rocket } from 'lucide-react';
 import { Button } from '../ui/button';
+import { FORM_URLS, openForm } from '../lib/forms.ts';
 
 export function ProgramsPage() {
   const [activeProgram, setActiveProgram] = useState(0);
@@ -101,6 +102,11 @@ export function ProgramsPage() {
     }
   ];
 
+  // Add a check here for programs[activeProgram]
+  if (!programs[activeProgram]) {
+    return null; // Or a loading spinner, or a message
+  }
+
   return (
     <div className="pt-20 lg:pt-24">
       {/* Hero Section */}
@@ -126,14 +132,14 @@ export function ProgramsPage() {
               <div className="w-12 h-1 bg-gradient-to-l from-orange-500 to-red-500"></div>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl mb-6">
+            <h1 className="text-6xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="text-white">Transform Your Ideas</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Into Startups at UTM
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-semibold">
               Discover our comprehensive programs designed specifically for UTM students. 
               From initial idea validation to scaling your startup, we provide the resources 
               and community support you need to succeed.
@@ -152,13 +158,13 @@ export function ProgramsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl mb-6">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Our</span>{" "}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Programs
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
               Choose the program that fits your entrepreneurial journey at UTM
             </p>
           </motion.div>
@@ -190,12 +196,12 @@ export function ProgramsPage() {
                       </div>
                       
                       <div className="flex-1">
-                        <h3 className={`text-lg mb-1 transition-colors duration-300 ${
+                        <h3 className={`text-lg mb-1 transition-colors duration-300 font-semibold ${
                           activeProgram === index ? 'text-orange-400' : 'text-white group-hover:text-orange-400'
                         }`}>
                           {program.title}
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed">
+                        <p className="text-gray-400 text-sm leading-relaxed font-semibold">
                           {program.subtitle}
                         </p>
                       </div>
@@ -221,38 +227,38 @@ export function ProgramsPage() {
                     {React.createElement(programs[activeProgram].icon, { className: "h-8 w-8 text-white" })}
                   </div>
                   <div>
-                    <h3 className="text-2xl text-white mb-1">{programs[activeProgram].title}</h3>
-                    <p className="text-orange-400">{programs[activeProgram].subtitle}</p>
+                    <h3 className="text-2xl text-white mb-1 font-bold">{programs[activeProgram].title}</h3>
+                    <p className="text-orange-400 font-semibold">{programs[activeProgram].subtitle}</p>
                   </div>
                 </div>
 
-                <p className="text-gray-300 leading-relaxed mb-6">
+                <p className="text-gray-300 leading-relaxed mb-6 font-semibold">
                   {programs[activeProgram].description}
                 </p>
 
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-3 bg-black/20 rounded-xl">
                     <Clock className="h-5 w-5 text-orange-400 mx-auto mb-1" />
-                    <p className="text-white text-sm">{programs[activeProgram].duration}</p>
-                    <p className="text-gray-400 text-xs">Duration</p>
+                    <p className="text-white text-sm font-semibold">{programs[activeProgram].duration}</p>
+                    <p className="text-gray-400 text-xs font-semibold">Duration</p>
                   </div>
                   <div className="text-center p-3 bg-black/20 rounded-xl">
                     <TrendingUp className="h-5 w-5 text-orange-400 mx-auto mb-1" />
-                    <p className="text-white text-sm">{programs[activeProgram].commitment}</p>
-                    <p className="text-gray-400 text-xs">Time Commitment</p>
+                    <p className="text-white text-sm font-semibold">{programs[activeProgram].commitment}</p>
+                    <p className="text-gray-400 text-xs font-semibold">Time Commitment</p>
                   </div>
                   <div className="text-center p-3 bg-black/20 rounded-xl">
                     <MapPin className="h-5 w-5 text-orange-400 mx-auto mb-1" />
-                    <p className="text-white text-sm">{programs[activeProgram].location}</p>
-                    <p className="text-gray-400 text-xs">Location</p>
+                    <p className="text-white text-sm font-semibold">{programs[activeProgram].location}</p>
+                    <p className="text-gray-400 text-xs font-semibold">Location</p>
                   </div>
                 </div>
 
                 <div className="mb-6">
-                  <h4 className="text-lg text-white mb-3">What You'll Get:</h4>
+                  <h4 className="text-lg text-white mb-3 font-semibold">What You'll Get:</h4>
                   <ul className="space-y-2">
                     {programs[activeProgram].features.map((feature, index) => (
-                      <li key={index} className="flex items-center text-gray-300">
+                      <li key={index} className="flex items-center text-gray-300 font-semibold">
                         <div className="w-2 h-2 bg-orange-500 rounded-full mr-3 flex-shrink-0"></div>
                         {feature}
                       </li>
@@ -260,7 +266,10 @@ export function ProgramsPage() {
                   </ul>
                 </div>
 
-                <Button className={`w-full bg-gradient-to-r ${programs[activeProgram].color} text-white hover:scale-105 transition-all duration-300 py-3 rounded-xl`}>
+                <Button
+                  onClick={() => openForm(FORM_URLS.partner)}
+                  className={`w-full bg-gradient-to-r ${programs[activeProgram].color} text-white hover:scale-105 transition-all duration-300 py-3 rounded-xl font-semibold`}
+                >
                   Apply to {programs[activeProgram].title}
                 </Button>
               </div>
@@ -281,13 +290,13 @@ export function ProgramsPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl mb-6">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Upcoming</span>{" "}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 UTM Events
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
               Join us for exciting events happening right here on UTM campus
             </p>
           </motion.div>
@@ -305,30 +314,31 @@ export function ProgramsPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="relative z-10">
-                  <div className="flex items-center space-x-2 text-orange-400 mb-3">
+                  <div className="flex items-center space-x-2 text-orange-400 mb-3 font-semibold">
                     <Calendar className="h-4 w-4" />
                     <span className="text-sm">{event.date}</span>
                     <span className="text-gray-500">•</span>
                     <span className="text-sm">{event.time}</span>
                   </div>
                   
-                  <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                  <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300 font-semibold">
                     {event.title}
                   </h3>
                   
-                  <div className="flex items-center space-x-2 text-gray-400 mb-3">
+                  <div className="flex items-center space-x-2 text-gray-400 mb-3 font-semibold">
                     <Building2 className="h-4 w-4" />
                     <span className="text-sm">{event.location}</span>
                   </div>
                   
-                  <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                  <p className="text-gray-300 text-sm leading-relaxed mb-4 font-semibold">
                     {event.description}
                   </p>
                   
                   <Button
+                    onClick={() => openForm(FORM_URLS.join)}
                     variant="outline"
                     size="sm"
-                    className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300"
+                    className="w-full border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 font-semibold"
                   >
                     Register Now
                   </Button>

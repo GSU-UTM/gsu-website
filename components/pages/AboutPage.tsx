@@ -71,19 +71,19 @@ export function AboutPage() {
               <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-red-500"></div>
               <div className="flex items-center space-x-2">
                 <MapPin className="h-4 w-4 text-orange-400" />
-                <span className="text-orange-400 tracking-wider uppercase">About GSU UTM</span>
+                <span className="text-orange-400 tracking-wider uppercase font-semibold">About GSU UTM</span>
               </div>
               <div className="w-12 h-1 bg-gradient-to-l from-orange-500 to-red-500"></div>
             </div>
             
-            <h1 className="text-4xl lg:text-6xl mb-6">
+            <h1 className="text-6xl lg:text-7xl font-bold leading-tight mb-6">
               <span className="text-white">Students First.</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Startups Together.
               </span>
             </h1>
             
-            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-semibold">
               We started as friends hacking on ideas after class. Now we’re a growing UTM community
               where anyone curious about building can find teammates, mentors, and momentum.
             </p>
@@ -103,19 +103,19 @@ export function AboutPage() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl lg:text-4xl mb-6">
+              <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
                 <span className="text-white">Our Mission</span><br />
                 <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                   Build a second home for builders
                 </span>
               </h2>
               
-              <p className="text-lg text-gray-300 leading-relaxed mb-6">
+              <p className="text-lg text-gray-300 leading-relaxed mb-6 font-semibold">
                 We make it easier to start. Show up, find your people, try things, and learn by building.
                 No gatekeeping — just a supportive crew that wants to see you win.
               </p>
               
-              <p className="text-lg text-gray-300 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed font-semibold">
                 We believe that every student at UTM has the potential to be an entrepreneur. Through mentorship, 
                 resources, and a collaborative community, we help turn ideas into reality.
               </p>
@@ -123,7 +123,7 @@ export function AboutPage() {
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
               className="grid grid-cols-1 gap-6"
@@ -143,10 +143,10 @@ export function AboutPage() {
                       </div>
                       
                       <div>
-                        <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                        <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300 font-semibold">
                           {value.title}
                         </h3>
-                        <p className="text-gray-400 leading-relaxed text-sm">
+                        <p className="text-gray-400 leading-relaxed text-sm font-semibold">
                           {value.description}
                         </p>
                       </div>
@@ -169,13 +169,13 @@ export function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl mb-6">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Our</span>{" "}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Journey
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
               From a small group of passionate students to UTM's premier startup community
             </p>
           </motion.div>
@@ -207,14 +207,14 @@ export function AboutPage() {
                             <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                               <Icon className="h-5 w-5 text-white" />
                             </div>
-                            <span className="text-orange-500 text-lg">{event.year}</span>
+                            <span className="text-orange-500 text-lg font-semibold">{event.year}</span>
                           </div>
                           
-                          <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                          <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300 font-semibold">
                             {event.title}
                           </h3>
                           
-                          <p className="text-gray-400 leading-relaxed text-sm">
+                          <p className="text-gray-400 leading-relaxed text-sm font-semibold">
                             {event.description}
                           </p>
                         </div>
@@ -246,13 +246,13 @@ export function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl lg:text-4xl mb-6">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">GSU UTM</span>{" "}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 By Numbers
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
               Our impact on the UTM entrepreneurship ecosystem
             </p>
           </motion.div>
@@ -275,11 +275,11 @@ export function AboutPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="relative z-10">
-                  <div className="text-3xl text-white mb-2 group-hover:text-orange-400 transition-colors duration-300">
+                  <div className="text-3xl text-white mb-2 group-hover:text-orange-400 transition-colors duration-300 font-bold">
                     {stat.number}
                   </div>
-                  <div className="text-lg text-orange-500 mb-1">{stat.label}</div>
-                  <div className="text-gray-400 text-sm">{stat.description}</div>
+                  <div className="text-lg text-orange-500 mb-1 font-semibold">{stat.label}</div>
+                  <div className="text-gray-400 text-sm font-semibold">{stat.description}</div>
                 </div>
               </motion.div>
             ))}

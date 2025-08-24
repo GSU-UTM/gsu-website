@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from '../ui/button';
+import { FORM_URLS, openForm } from '../lib/forms';
 import { ArrowRight, Rocket, Target, Users, Lightbulb, TrendingUp, MapPin, GraduationCap, Calendar, Mail } from 'lucide-react';
 import { motion } from 'motion/react';
 
@@ -7,25 +8,25 @@ export function HomePage() {
   const features = [
     {
       title: "UTM Innovation Labs",
-      description: "Transform your ideas into viable business concepts right here at UTM",
+      description: "Transform your ideas into viable business concepts through our comprehensive innovation program at UTM",
       icon: Lightbulb,
       color: "from-orange-500 to-red-500"
     },
     {
       title: "Campus Mentorship",
-      description: "Connect with UTM alumni and successful entrepreneurs",
+      description: "Connect with UTM alumni and successful entrepreneurs for personalized guidance",
       icon: GraduationCap,
       color: "from-orange-400 to-orange-600"
     },
     {
       title: "Pitch Competitions",
-      description: "Showcase your startup to UTM community and investors",
+      description: "Showcase your startup to the UTM community and potential investors",
       icon: Target,
       color: "from-red-500 to-pink-500"
     },
     {
       title: "Growth Accelerator",
-      description: "Scale your startup with guidance from UTM's network",
+      description: "Scale your startup with strategic guidance from UTM's extensive network",
       icon: TrendingUp,
       color: "from-orange-600 to-red-600"
     }
@@ -34,19 +35,19 @@ export function HomePage() {
   const values = [
     {
       title: "Student-Led Innovation",
-      description: "By students, for students. Every program is designed with UTM student needs in mind.",
+      description: "Our programs are designed by UTM students, specifically tailored to meet the unique needs of our campus community.",
       icon: Users,
       color: "from-orange-500 to-red-500"
     },
     {
       title: "Practical Learning",
-      description: "Hands-on workshops and real-world startup experience, not just theory.",
+      description: "Engage in hands-on workshops and gain real-world startup experience through our comprehensive curriculum.",
       icon: Rocket,
       color: "from-orange-400 to-orange-600"
     },
     {
       title: "Community First",
-      description: "Building lasting connections within the UTM entrepreneurship ecosystem.",
+      description: "We prioritize building lasting connections within the UTM entrepreneurship ecosystem.",
       icon: Users,
       color: "from-red-500 to-pink-500"
     }
@@ -55,12 +56,17 @@ export function HomePage() {
   return (
     <div className="pt-20 lg:pt-24">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background Geometric Shapes */}
+      <section className="relative min-h-[80vh] flex items-center overflow-hidden">
+        <div>
+          {/* Website updated message */}
+          <div style={{ background: '#e0ffe0', padding: '10px', marginBottom: '20px', textAlign: 'center', fontWeight: 'bold' }}>
+            Website updated
+          </div>
+        </div>
         <div className="absolute inset-0">
-          <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-orange-400/10 to-orange-600/10 transform rotate-45"></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-orange-500/10 rounded-full"></div>
+          <div className="absolute top-20 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-0 w-80 h-80 bg-gradient-to-tr from-orange-400/20 to-orange-600/20 transform rotate-45"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-orange-500/20 rounded-full"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -77,37 +83,31 @@ export function HomePage() {
                   <div className="w-12 h-1 bg-gradient-to-r from-orange-500 to-red-500"></div>
                   <div className="flex items-center space-x-2">
                     <MapPin className="h-4 w-4 text-orange-400" />
-                    <span className="text-orange-400 tracking-wider uppercase font-semibold">University of Toronto Mississauga</span>
+                    <span className="text-orange-400 tracking-wider uppercase font-semibold text-sm">University of Toronto Mississauga</span>
                   </div>
                 </div>
                 
-                <h1 className="text-6xl lg:text-7xl leading-tight font-extrabold">
+                <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
                   <span className="text-white">Groundup Startups</span><br />
-                  <span className="bg-gradient-to-r from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                  <span className="text-white">
                     UTM
                   </span>
                 </h1>
                 
-                <p className="text-xl text-gray-300 leading-relaxed max-w-xl font-normal">
-                  We’re a student‑run community at UTM. We build startups together, learn by doing, and
-                  show up for each other. If you’re looking for a second home on campus, you’re in the right place.
+                <p className="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-xl">
+                  We're UTM students building real ventures together — a collaborative community for innovators. Join us weekly to connect with peers, develop your ideas, and launch your startup.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  asChild
                   size="lg"
                   className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-orange-500/25 font-bold"
                 >
-                  <a 
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfAh771LDLQTKuyQHjGATUSesG8Smxmll1amwSkIDDCLU981A/viewform?usp=dialog" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
+                  <span onClick={() => openForm(FORM_URLS.join)}>
                     Join GSU UTM
                     <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
+                  </span>
                 </Button>
                 
                 <Button
@@ -149,7 +149,7 @@ export function HomePage() {
                           <h3 className="text-lg text-white mb-2 group-hover:text-orange-400 transition-colors duration-300 font-semibold">
                             {value.title}
                           </h3>
-                          <p className="text-gray-400 leading-relaxed text-sm font-normal">
+                          <p className="text-gray-400 leading-relaxed text-sm font-semibold">
                             {value.description}
                           </p>
                         </div>
@@ -176,15 +176,15 @@ export function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl mb-6 font-extrabold">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Build With Us</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 at UTM
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-normal">
-              Weekly co‑working, hands‑on workshops, mentors who’ve been there, and friends who keep you accountable.
-              Everything is made by students, for students.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
+              Weekly co-working sessions, hands-on workshops, mentorship from experienced entrepreneurs, and a supportive community to keep you accountable.
+              Our programs are designed by students, specifically for students.
             </p>
           </motion.div>
 
@@ -213,7 +213,7 @@ export function HomePage() {
                         {feature.title}
                       </h3>
                       
-                      <p className="text-gray-400 leading-relaxed text-sm font-normal">
+                      <p className="text-gray-400 leading-relaxed text-sm font-semibold">
                         {feature.description}
                       </p>
                     </div>
@@ -235,14 +235,14 @@ export function HomePage() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl lg:text-6xl mb-6 font-extrabold">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Get</span>{" "}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Involved
               </span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-normal">
-              Want in? Here’s how to plug into the community.
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto font-semibold">
+              Ready to get started? Here's how to become part of our community.
             </p>
           </motion.div>
 
@@ -261,7 +261,7 @@ export function HomePage() {
                 <h3 className="text-2xl text-white mb-4 group-hover:text-orange-400 transition-colors duration-300 font-bold">
                   Upcoming Events
                 </h3>
-                <p className="text-gray-400 mb-6 font-normal">
+                <p className="text-gray-400 mb-6 font-semibold">
                   Join our workshops, networking sessions, and startup competitions
                 </p>
                 <Button 
@@ -287,21 +287,15 @@ export function HomePage() {
                 <h3 className="text-2xl text-white mb-4 group-hover:text-orange-400 transition-colors duration-300 font-bold">
                   Join Our Team
                 </h3>
-                <p className="text-gray-400 mb-6 font-normal">
+                <p className="text-gray-400 mb-6 font-semibold">
                   Become part of the <span className="font-medium text-gray-300">founding team</span> building GSU UTM
                 </p>
                 <Button 
-                  asChild
+                  onClick={() => openForm(FORM_URLS.volunteer)}
                   variant="outline" 
                   className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold"
                 >
-                  <a 
-                    href="https://docs.google.com/forms/d/e/1FAIpQLSfAh771LDLQTKuyQHjGATUSesG8Smxmll1amwSkIDDCLU981A/viewform?usp=dialog" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    Join Now
-                  </a>
+                  Join Now
                 </Button>
               </div>
             </motion.div>
@@ -320,15 +314,15 @@ export function HomePage() {
                 <h3 className="text-2xl text-white mb-4 group-hover:text-orange-400 transition-colors duration-300 font-bold">
                   Contact Us
                 </h3>
-                <p className="text-gray-400 mb-6 font-normal">
+                <p className="text-gray-400 mb-6 font-semibold">
                   Have questions? Want to collaborate? Reach out to us
                 </p>
                 <Button
-                  asChild
+                  onClick={() => openForm(FORM_URLS.partner)}
                   variant="outline"
                   className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white font-semibold"
                 >
-                  <a href="mailto:groundup.startup.uoft@gmail.com">Get in Touch</a>
+                  Get in Touch
                 </Button>
               </div>
             </motion.div>
@@ -352,7 +346,7 @@ export function HomePage() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-5xl lg:text-6xl leading-tight mb-6 font-extrabold">
+            <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
               <span className="text-white">Ready to</span><br />
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Build the Future
@@ -360,28 +354,22 @@ export function HomePage() {
               <span className="text-white">at UTM?</span>
             </h2>
             
-            <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto font-normal">
-              We’re building real things with real people — right here on campus. No ego, just momentum.
+            <p className="text-xl text-gray-300 leading-relaxed mb-8 max-w-2xl mx-auto font-semibold">
+              We're building real ventures with real people — right here on campus. Join our collaborative community focused on innovation and growth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
-                asChild
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 shadow-xl font-bold"
               >
-                <a 
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfAh771LDLQTKuyQHjGATUSesG8Smxmll1amwSkIDDCLU981A/viewform?usp=dialog" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                >
+                <span onClick={() => openForm(FORM_URLS.join)}>
                   Join GSU UTM
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </span>
               </Button>
               
               <Button
-                asChild
                 variant="outline"
                 size="lg"
                 className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-4 rounded-2xl transition-all duration-300 font-semibold"
