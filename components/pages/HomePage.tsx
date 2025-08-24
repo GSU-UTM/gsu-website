@@ -98,9 +98,8 @@ export function HomePage() {
                   size="lg"
                   className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-orange-500/25 font-bold"
                 >
-                  <span onClick={() => openForm(FORM_URLS.join)}>
-                    Join GSU UTM
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                  <span onClick={() => openForm(FORM_URLS.join)} style={{ display: 'inline-flex', alignItems: 'center' }}>
+                    Join GSU UTM <ArrowRight className="ml-2 h-5 w-5" />
                   </span>
                 </Button>
                 
