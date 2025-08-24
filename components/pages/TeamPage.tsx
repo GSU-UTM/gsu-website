@@ -11,7 +11,7 @@ export function TeamPage() {
   const members = [
     { name: 'Jacobo Isaza', role: 'Co-founder', photo: null },
     { name: 'Michal Buczek', role: 'Founder', photo: MichalImg },
-    { name: 'Damilare', role: 'CFO', photo: null },
+  { name: 'Tshupi Makola', role: 'CFO', photo: null },
     { name: 'Lucrezia Derossi', role: 'CMO', photo: LucreziaImg },
     { name: 'Takatoshi Lee', role: 'CTO', photo: TakatoshiImg },
   ];
