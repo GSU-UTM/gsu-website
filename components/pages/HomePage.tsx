@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import React from "react";
 import { Button } from "../ui/button";
 import { FORM_URLS, openForm } from "../lib/forms";
+=======
+import React from 'react';
+import { Button } from '../ui/button';
+import { FORM_URLS, openForm } from '../lib/forms';
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
 import {
   ArrowRight,
   Rocket,
@@ -12,12 +18,18 @@ import {
   GraduationCap,
   Calendar,
   Mail,
+<<<<<<< HEAD
 } from "lucide-react";
 import { motion } from "motion/react";
+=======
+} from 'lucide-react';
+import { motion } from 'motion/react';
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
 
 export function HomePage() {
   const features = [
     {
+<<<<<<< HEAD
       title: "UTM Innovation Labs",
       description:
         "Transform your ideas into viable business concepts through our comprehensive innovation program at UTM",
@@ -44,11 +56,40 @@ export function HomePage() {
         "Scale your startup with strategic guidance from UTM's extensive network",
       icon: TrendingUp,
       color: "from-orange-600 to-red-600",
+=======
+      title: 'UTM Innovation Labs',
+      description:
+        'Transform your ideas into viable business concepts through our comprehensive innovation program at UTM',
+      icon: Lightbulb,
+      color: 'from-orange-500 to-red-500',
+    },
+    {
+      title: 'Campus Mentorship',
+      description:
+        'Connect with UTM alumni and successful entrepreneurs for personalized guidance',
+      icon: GraduationCap,
+      color: 'from-orange-400 to-orange-600',
+    },
+    {
+      title: 'Pitch Competitions',
+      description:
+        'Showcase your startup to the UTM community and potential investors',
+      icon: Target,
+      color: 'from-red-500 to-pink-500',
+    },
+    {
+      title: 'Growth Accelerator',
+      description:
+        "Scale your startup with strategic guidance from UTM's extensive network",
+      icon: TrendingUp,
+      color: 'from-orange-600 to-red-600',
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
     },
   ];
 
   const values = [
     {
+<<<<<<< HEAD
       title: "Student-Led Innovation",
       description:
         "Our programs are designed by UTM students, specifically tailored to meet the unique needs of our campus community.",
@@ -68,6 +109,27 @@ export function HomePage() {
         "We prioritize building lasting connections within the UTM entrepreneurship ecosystem.",
       icon: Users,
       color: "from-red-500 to-pink-500",
+=======
+      title: 'Student-Led Innovation',
+      description:
+        'Our programs are designed by UTM students, specifically tailored to meet the unique needs of our campus community.',
+      icon: Users,
+      color: 'from-orange-500 to-red-500',
+    },
+    {
+      title: 'Practical Learning',
+      description:
+        'Engage in hands-on workshops and gain real-world startup experience through our comprehensive curriculum.',
+      icon: Rocket,
+      color: 'from-orange-400 to-orange-600',
+    },
+    {
+      title: 'Community First',
+      description:
+        'We prioritize building lasting connections within the UTM entrepreneurship ecosystem.',
+      icon: Users,
+      color: 'from-red-500 to-pink-500',
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
     },
   ];
 
@@ -122,7 +184,11 @@ export function HomePage() {
                 >
                   <span
                     onClick={() => openForm(FORM_URLS.join)}
+<<<<<<< HEAD
                     style={{ display: "inline-flex", alignItems: "center" }}
+=======
+                    style={{ display: 'inline-flex', alignItems: 'center' }}
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
                   >
                     Join GSU UTM <ArrowRight className="ml-2 h-5 w-5" />
                   </span>
@@ -265,7 +331,7 @@ export function HomePage() {
             className="text-center mb-16"
           >
             <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
-              <span className="text-white">Get</span>{" "}
+              <span className="text-white">Get</span>{' '}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Involved
               </span>
@@ -295,7 +361,11 @@ export function HomePage() {
                   competitions
                 </p>
                 <Button
+<<<<<<< HEAD
                   onClick={() => (window.location.href = "#events")}
+=======
+                  onClick={() => (window.location.href = '#events')}
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
                   className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 font-semibold"
                 >
                   View Events
@@ -318,10 +388,17 @@ export function HomePage() {
                   Join Our Team
                 </h3>
                 <p className="text-gray-400 mb-6 font-semibold">
+<<<<<<< HEAD
                   Become part of the{" "}
                   <span className="font-medium text-gray-300">
                     founding team
                   </span>{" "}
+=======
+                  Become part of the{' '}
+                  <span className="font-medium text-gray-300">
+                    founding team
+                  </span>{' '}
+>>>>>>> ca13cde29ab7cf9b569dd077c2549f536a2e6101
                   building GSU UTM
                 </p>
                 <Button
@@ -401,7 +478,7 @@ export function HomePage() {
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 shadow-xl font-bold"
               >
-                <span onClick={() => openForm(FORM_URLS.join)}>
+                <span onClick={() => openForm(FORM_URLS.join)} className="flex">
                   Join GSU UTM
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </span>

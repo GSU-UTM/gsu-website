@@ -28,7 +28,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-background font-['League_Spartan'] overflow-x-hidden">
-      <Navigation currentPage={currentPage} onPageChange={setCurrentPage} showText={true} />
+      <Navigation
+        currentPage={currentPage}
+        onPageChange={setCurrentPage}
+        showText={true}
+      />
       {renderPage()}
     </div>
   );
