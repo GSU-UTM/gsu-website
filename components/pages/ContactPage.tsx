@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "motion/react";
 import {
   Mail,
@@ -13,6 +13,57 @@ import { Button } from "../ui/button";
 import { FORM_URLS, openForm } from "../lib/forms";
 
 export function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState('');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('');
+
+    try {
+      const response = await fetch('https://formspree.io/f/xkgvoabl', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email,
+          _subject: `GSU Website Contact: ${formData.subject}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('Thank you! Your message has been sent successfully. We\'ll get back to you soon!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setSubmitStatus('Sorry, there was an error sending your message. Please try again or email us directly at groundup.startup.uoft@gmail.com');
+      }
+    } catch (error) {
+      setSubmitStatus('Sorry, there was an error sending your message. Please try again or email us directly at groundup.startup.uoft@gmail.com');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactMethods = [
     {
       title: "Email Us",
@@ -200,13 +251,16 @@ export function ContactPage() {
 
           <div className="bg-gray-900/60 backdrop-blur-xl border border-gray-800 rounded-2xl p-8">
             {/* Contact Form */}
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-gray-300 text-sm font-semibold mb-2">Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 font-semibold"
                   placeholder="Your Name"
                 />
@@ -217,6 +271,9 @@ export function ContactPage() {
                   type="email"
                   id="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  required
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 font-semibold"
                   placeholder="your.email@example.com"
                 />
@@ -227,6 +284,9 @@ export function ContactPage() {
                   type="text"
                   id="subject"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  required
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 font-semibold"
                   placeholder="Subject of your message"
                 />
@@ -237,15 +297,30 @@ export function ContactPage() {
                   id="message"
                   name="message"
                   rows={5}
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  required
                   className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500 font-semibold"
                   placeholder="Your message..."
                 ></textarea>
               </div>
+              
+              {submitStatus && (
+                <div className={`p-3 rounded-lg text-center font-semibold ${
+                  submitStatus.includes('Thank you') 
+                    ? 'bg-green-500/20 text-green-400 border border-green-500/50' 
+                    : 'bg-red-500/20 text-red-400 border border-red-500/50'
+                }`}>
+                  {submitStatus}
+                </div>
+              )}
+              
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 py-3 rounded-lg transform hover:scale-105 transition-all duration-300 font-semibold"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 py-3 rounded-lg transform hover:scale-105 transition-all duration-300 font-semibold disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
               >
-                Send Message
+                {isSubmitting ? 'Sending...' : 'Send Message'}
               </Button>
             </form>
           </div>
