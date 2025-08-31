@@ -11,9 +11,9 @@ import { FORM_URLS, openForm } from "../lib/forms";
 
 export function TeamPage() {
   const members = [
-    { name: "Jacobo Isaza", role: "Co-President", photo: null },
+    { name: "Jacobo Isaza", role: "Co-President", photo: JacoboImg },
     { name: "Michal Buczek", role: "Co-President", photo: MichalImg },
-    { name: "Tshupi Makola", role: "CFO", photo: null },
+    { name: "Tshupi Makola", role: "CFO", photo: TshupiImg },
     { name: "Lucrezia Derossi", role: "CMO", photo: LucreziaImg },
     { name: "Takatoshi Lee", role: "CTO", photo: TakatoshiImg },
   ];
