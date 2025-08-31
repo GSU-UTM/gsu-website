@@ -102,7 +102,7 @@ export function HomePage() {
                 </div>
 
                 <h1 className="text-5xl lg:text-6xl font-bold leading-tight">
-                  <span className="text-white">Groundup Startups</span>
+                  <span className="text-white">Ground-up Startups</span>
                   <br />
                   <span className="text-white">UTM</span>
                 </h1>

@@ -1,4 +1,4 @@
-import svgPaths from "./svg-rv6mlxith5";
+import svgPaths from './svg-rv6mlxith5';
 
 export default function Frame237756() {
   return (
@@ -21,7 +21,7 @@ export default function Frame237756() {
         </div>
       </div>
       <div className="absolute flex flex-col font-['League_Spartan:Bold',_sans-serif] font-bold h-[111px] justify-center leading-[normal] left-60 text-[#ffe9d2] text-[63px] text-left top-[146.5px] translate-y-[-50%] w-[564px]">
-        <p className="block mb-0">GROUNDUP</p>
+        <p className="block mb-0">GROUND-UP</p>
         <p className="block">STARTUPS UTM</p>
       </div>
     </div>

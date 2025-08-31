@@ -1,27 +1,27 @@
-import React from "react";
-import LucreziaImg from "../../assets/Lucrezia.jpeg";
-import MichalImg from "../../assets/Michal.jpeg";
-import TakatoshiImg from "../../assets/Takatoshi.jpeg";
-import JacoboImg from "../../assets/Jacobo.jpeg";
-import TshupiImg from "../../assets/Tshupi.jpeg";
-import { motion } from "motion/react";
-import { Users, Heart, MapPin, ArrowRight } from "lucide-react";
-import { Button } from "../ui/button";
-import { FORM_URLS, openForm } from "../lib/forms";
+import React from 'react';
+import LucreziaImg from '../../assets/Lucrezia.jpeg';
+import MichalImg from '../../assets/Michal.jpeg';
+import TakatoshiImg from '../../assets/Takatoshi.jpeg';
+import JacoboImg from '../../assets/Jacobo.jpeg';
+import TshupiImg from '../../assets/Tshupi.jpeg';
+import { motion } from 'motion/react';
+import { Users, Heart, MapPin, ArrowRight } from 'lucide-react';
+import { Button } from '../ui/button';
+import { FORM_URLS, openForm } from '../lib/forms';
 
 export function TeamPage() {
   const members = [
-    { name: "Jacobo Isaza", role: "Co-President", photo: null },
-    { name: "Michal Buczek", role: "Co-President", photo: MichalImg },
-    { name: "Tshupi Makola", role: "CFO", photo: TshupiImg },
-    { name: "Lucrezia Derossi", role: "CMO", photo: LucreziaImg },
-    { name: "Takatoshi Lee", role: "CTO", photo: TakatoshiImg },
+    { name: 'Jacobo Isaza', role: 'Co-President', photo: null },
+    { name: 'Michal Buczek', role: 'Co-President', photo: MichalImg },
+    { name: 'Tshupi Makola', role: 'CFO', photo: TshupiImg },
+    { name: 'Lucrezia Derossi', role: 'CMO', photo: LucreziaImg },
+    { name: 'Takatoshi Lee', role: 'CTO', photo: TakatoshiImg },
   ];
 
   const initials = (name: string) => {
     const parts = name.trim().split(/\s+/);
-    const letters = parts.slice(0, 2).map((p) => p[0]?.toUpperCase() ?? "");
-    return letters.join("");
+    const letters = parts.slice(0, 2).map((p) => p[0]?.toUpperCase() ?? '');
+    return letters.join('');
   };
   return (
     <div className="pt-20 lg:pt-24">
@@ -59,7 +59,7 @@ export function TeamPage() {
             </h1>
 
             <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed font-semibold">
-              We’re UTM students building Groundup Startups together — a
+              We’re UTM students building Ground-up Startups together — a
               community where we help each other launch and grow real ventures.
             </p>
           </motion.div>
@@ -121,7 +121,7 @@ export function TeamPage() {
             className="text-center mb-16"
           >
             <h2 className="text-6xl lg:text-7xl leading-tight mb-6 font-bold">
-              <span className="text-white">Want to</span>{" "}
+              <span className="text-white">Want to</span>{' '}
               <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
                 Join Us?
               </span>
