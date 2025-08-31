@@ -2,6 +2,8 @@ import React from "react";
 import LucreziaImg from "../../assets/Lucrezia.jpeg";
 import MichalImg from "../../assets/Michal.jpeg";
 import TakatoshiImg from "../../assets/Takatoshi.jpeg";
+import JacoboImg from "../../assets/Jacobo.jpeg";
+import TshupiImg from "../../assets/Tshupi.jpeg";
 import { motion } from "motion/react";
 import { Users, Heart, MapPin, ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
