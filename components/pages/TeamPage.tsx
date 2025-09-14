@@ -4,7 +4,8 @@ import MichalImg from '../../assets/Michal.jpeg';
 import TakatoshiImg from '../../assets/Takatoshi.jpeg';
 import JacoboImg from '../../assets/Jacobo.jpeg';
 import TshupiImg from '../../assets/Tshupi.jpeg';
-import { motion } from 'motion/react';
+import IsabellaImg from '../../assets/Isabella.jpeg';
+import AkshayaImg from '../../assets/Akshaya.jpeg';
 import { Users, Heart, MapPin, ArrowRight } from 'lucide-react';
 import { Button } from '../ui/button';
 import { FORM_URLS, openForm } from '../lib/forms';
@@ -14,7 +15,8 @@ export function TeamPage() {
     { name: 'Jacobo Isaza', role: 'Co-President', photo: null },
     { name: 'Michal Buczek', role: 'Co-President', photo: MichalImg },
     { name: 'Tshupi Makola', role: 'CFO', photo: TshupiImg },
-    { name: 'Lucrezia Derossi', role: 'CMO', photo: LucreziaImg },
+    { name: 'Isabella Fulchan', role: 'Graphic Designer', photo: IsabellaImg },
+    { name: 'Akshaya Sridhar', role: 'Researcher', photo: AkshayaImg },    { name: 'Lucrezia Derossi', role: 'CMO', photo: LucreziaImg },
     { name: 'Takatoshi Lee', role: 'CTO', photo: TakatoshiImg },
   ];
 
