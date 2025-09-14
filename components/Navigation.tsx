@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
-import { Menu, X, Home, Users, Target, Calendar, Mail } from 'lucide-react';
-
+import {
+  Menu,
+  X,
+  Home,
+  Users,
+  Target,
+  Calendar,
+  Mail,
+  Rocket,
+} from 'lucide-react';
 interface NavigationProps {
   currentPage: string;
   onPageChange: (page: string) => void;
@@ -15,6 +23,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
   const navItems = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'events', label: 'Events', icon: Calendar },
+    { id: 'startups', label: 'Startups', icon: Rocket },
     { id: 'team', label: 'Team', icon: Users },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];
@@ -76,6 +85,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
       <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-orange-500/20">
         <div className="px-4 py-4 flex justify-between items-center">
           <Logo size="md" showText={true} />
+<<<<<<< Updated upstream
           <div className="flex items-center space-x-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -105,6 +115,20 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
               )}
             </Button>
           </div>
+=======
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-white hover:bg-white/10"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
+>>>>>>> Stashed changes
         </div>
 
         {/* Mobile Menu Overlay */}
