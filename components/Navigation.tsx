@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Logo } from './Logo';
-import { Menu, X, Home, Users, Target, Calendar, Mail, Rocket } from 'lucide-react';
-
+import {
+  Menu,
+  X,
+  Home,
+  Users,
+  Target,
+  Calendar,
+  Mail,
+  Rocket,
+} from 'lucide-react';
 interface NavigationProps {
   currentPage: string;
   onPageChange: (page: string) => void;
@@ -74,7 +82,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
       </nav>
 
       {/* Mobile Navigation */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-orange-500/20">
+       <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-xl border-b border-orange-500/20">
         <div className="px-4 py-4 flex justify-between items-center">
           <Logo size="md" showText={true} />
           <div className="flex items-center space-x-3">
@@ -86,7 +94,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
               height="24"
               viewBox="0 0 24 24"
               fill="white"
-              className="ml-10"
+              className="cursor-pointer hover:fill-orange-400 transition-colors"
               onClick={() =>
                 window.open('https://www.instagram.com/gsu.utm/', '_blank')
               }

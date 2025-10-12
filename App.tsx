@@ -3,7 +3,8 @@ import { Navigation } from './components/Navigation';
 import { HomePage } from './components/pages/HomePage';
 import { ProgramsPage } from './components/pages/ProgramsPage';
 import { EventsPage } from './components/pages/EventsPage';
-import { StartupsPage } from './components/pages/StartupsPage';
+// import { StartupsPage } from './components/pages/StartupsPage';
+import { StartupsNewPage as StartupsPage } from './components/pages/StartupsNewPage';
 import { TeamPage } from './components/pages/TeamPage';
 import { ContactPage } from './components/pages/ContactPage';
 import {
