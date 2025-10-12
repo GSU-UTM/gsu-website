@@ -126,8 +126,8 @@ export function StartupsNewPage() {
             {/* Hero Section */}
             <section className="relative py-20 lg:py-32 overflow-hidden">
               <div className="absolute inset-0">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
+                <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-purple-500/20 to-blue-500/20 rounded-full blur-3xl"></div>
               </div>
 
               <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -138,20 +138,20 @@ export function StartupsNewPage() {
                   className="text-center mb-16"
                 >
                   <div className="flex items-center justify-center space-x-3 mb-6">
-                    <Rocket className="h-5 w-5 text-orange-400" />
+                    <Rocket className="h-6 w-6 text-orange-400" />
                     <span className="text-orange-400 tracking-wider uppercase font-semibold">
                       Our Portfolio
                     </span>
                   </div>
 
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
                     Student{' '}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-500">
+                    <span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
                       Innovations
                     </span>
                   </h1>
 
-                  <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                  <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
                     Discover the groundbreaking startups launched by GSU members.
                     From idea to impact, these ventures are changing the game.
                   </p>
@@ -191,61 +191,57 @@ export function StartupsNewPage() {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      className="group relative bg-gradient-to-br from-gray-900 to-black rounded-2xl border border-gray-800 overflow-hidden hover:border-orange-500/50 transition-all duration-300"
+                      className="group relative"
                     >
-                      {/* Startup Image */}
-                      <div className="aspect-video bg-gradient-to-br from-orange-500/20 to-purple-500/20 relative overflow-hidden">
-                        {/* Placeholder for startup image - replace with actual image */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <Rocket className="w-16 h-16 text-white/30" />
-                        </div>
-                        {/* When you have actual images, use: */}
-                        {/* <img
-                          src={startup.image}
-                          alt={startup.name}
-                          className="w-full h-full object-cover"
-                        /> */}
-
-                        {/* Stage Badge */}
-                        <div className="absolute top-4 right-4">
-                          <span className={`px-3 py-1 rounded-full text-xs font-bold text-white ${stageColors[startup.stage]}`}>
-                            {stageLabels[startup.stage]}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Content */}
-                      <div className="p-6">
-                        <h3 className="text-2xl font-bold text-white mb-2">
-                          {startup.name}
-                        </h3>
-                        <p className="text-orange-400 text-sm mb-4">
-                          {startup.tagline}
-                        </p>
-                        <p className="text-gray-300 mb-6 line-clamp-3">
-                          {startup.description}
-                        </p>
-
-                        {/* Meta Info */}
-                        <div className="flex items-center justify-between text-sm text-gray-400 mb-6">
-                          <div className="flex items-center gap-1">
-                            <Users className="w-4 h-4" />
-                            <span>{startup.founders.length} founders</span>
+                      <div className={`absolute inset-0 bg-gradient-to-br ${stageColors[startup.stage]} rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-300`}></div>
+                      <div className="relative bg-gradient-to-br from-gray-900 to-black rounded-3xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all duration-300 h-full flex flex-col">
+                        {/* Startup Image */}
+                        <div className="aspect-video bg-gradient-to-br from-orange-500/10 to-purple-500/10 relative overflow-hidden">
+                          <div className="absolute inset-0 flex items-center justify-center">
+                            <Rocket className="w-20 h-20 text-white/20 group-hover:scale-110 transition-transform duration-300" />
                           </div>
-                          <div className="flex items-center gap-1">
-                            <Calendar className="w-4 h-4" />
-                            <span>{startup.foundedDate}</span>
+
+                          {/* Stage Badge */}
+                          <div className="absolute top-4 right-4">
+                            <span className={`px-4 py-2 rounded-full text-sm font-bold text-white ${stageColors[startup.stage]} shadow-lg`}>
+                              {stageLabels[startup.stage]}
+                            </span>
                           </div>
                         </div>
 
-                        {/* Action Button */}
-                        <Button
-                          onClick={() => setSelectedStartup(startup)}
-                          className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 rounded-lg flex items-center justify-center gap-2 group"
-                        >
-                          Learn More
-                          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
+                        {/* Content */}
+                        <div className="p-8 flex-1 flex flex-col">
+                          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-400 transition-colors duration-300">
+                            {startup.name}
+                          </h3>
+                          <p className="text-orange-400 text-base mb-4 font-semibold">
+                            {startup.tagline}
+                          </p>
+                          <p className="text-gray-300 mb-6 line-clamp-3 leading-relaxed flex-1">
+                            {startup.description}
+                          </p>
+
+                          {/* Meta Info */}
+                          <div className="flex items-center justify-between text-sm text-gray-400 mb-6 pb-6 border-b border-gray-800">
+                            <div className="flex items-center gap-2">
+                              <Users className="w-4 h-4 text-orange-400" />
+                              <span>{startup.founders.length} founders</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Calendar className="w-4 h-4 text-orange-400" />
+                              <span>{startup.foundedDate}</span>
+                            </div>
+                          </div>
+
+                          {/* Action Button */}
+                          <Button
+                            onClick={() => setSelectedStartup(startup)}
+                            className={`w-full bg-gradient-to-r ${stageColors[startup.stage]} text-white font-semibold py-4 rounded-2xl flex items-center justify-center gap-2 transform hover:scale-105 transition-all duration-300 shadow-lg`}
+                          >
+                            Learn More
+                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </div>
                       </div>
                     </motion.div>
                   ))}
