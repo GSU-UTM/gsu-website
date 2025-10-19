@@ -42,7 +42,7 @@ export function HomePage() {
             </div>
 
             <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight mb-8">
-              <span className="text-white">Ground-up</span>
+              <span className="text-white">Ground-Up</span>
               <br />
               <span className="bg-gradient-to-r from-orange-400 via-red-500 to-pink-500 bg-clip-text text-transparent">
                 Startups UTM
@@ -66,11 +66,20 @@ export function HomePage() {
               </Button>
 
               <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="border-2 border-white/20 text-white hover:bg-white/10 px-10 py-7 rounded-2xl transition-all duration-300 text-xl font-semibold backdrop-blur-sm"
               >
-                Learn More
+                <a
+                  href="https://lu.ma/user/usr-mELXS77OWK0UMVW"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <Calendar className="mr-2 h-6 w-6" />
+                  Register for Events
+                </a>
               </Button>
             </div>
           </motion.div>
@@ -289,6 +298,24 @@ export function HomePage() {
               </Button>
 
               <Button
+                asChild
+                variant="outline"
+                size="lg"
+                className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-10 py-7 rounded-2xl transition-all duration-300 text-xl font-semibold"
+              >
+                <a
+                  href="https://lu.ma/user/usr-mELXS77OWK0UMVW"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
+                  <Calendar className="mr-2 h-6 w-6" />
+                  Register for Events
+                </a>
+              </Button>
+
+              <Button
+                asChild
                 variant="outline"
                 size="lg"
                 className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-10 py-7 rounded-2xl transition-all duration-300 text-xl font-semibold"
