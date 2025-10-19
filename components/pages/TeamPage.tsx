@@ -6,6 +6,7 @@ import TakatoshiImg from '../../assets/Takatoshi.jpeg';
 import JacoboImg from '../../assets/Jacobo.jpeg';
 import TshupiImg from '../../assets/Tshupi.jpeg';
 import AkshayaImg from '../../assets/Akshaya.jpeg';
+import TigerImg from '../../assets/Tiger.jpeg';
 import { Users, Heart, MapPin, ArrowRight, Sparkles, Linkedin, Mail } from 'lucide-react';
 import { Button } from '../ui/button';
 import { FORM_URLS, openForm } from '../lib/forms';
@@ -49,6 +50,13 @@ export function TeamPage() {
       photo: JacoboImg,
       quote: 'My name is Jacobo Isaza, a third-year Biological Chemistry research student from Colombia with experience in computational languages.',
       funFact: 'Excited to guide GSU\'s team in boosting your chances of building a successful startup, while also supporting your journey toward personal growth and success'
+    },
+    {
+      name: 'Mayank Agarwal',
+      role: 'Advisor',
+      photo: TigerImg,
+      quote: 'Hey everyone, I\'m Tiger. A bold thinker who\'s obsessed with building startups that actually do something. My background\'s in strategy, marketing, and execution but my real focus is helping people turn ideas into high-impact ventures.',
+      funFact: 'I believe every student has at least one billion-dollar idea in them they just need the right environment to bring it out. That\'s what I\'m here to build'
     },
     {
       name: 'Takatoshi Lee',
