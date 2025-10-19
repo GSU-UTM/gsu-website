@@ -52,13 +52,6 @@ export function TeamPage() {
       funFact: 'Excited to guide GSU\'s team in boosting your chances of building a successful startup, while also supporting your journey toward personal growth and success'
     },
     {
-      name: 'Mayank Agarwal',
-      role: 'Advisor',
-      photo: TigerImg,
-      quote: 'Hey everyone, I\'m Tiger. A bold thinker who\'s obsessed with building startups that actually do something. My background\'s in strategy, marketing, and execution but my real focus is helping people turn ideas into high-impact ventures.',
-      funFact: 'I believe every student has at least one billion-dollar idea in them they just need the right environment to bring it out. That\'s what I\'m here to build'
-    },
-    {
       name: 'Takatoshi Lee',
       role: 'Chief Technology Officer (CTO)',
       photo: TakatoshiImg,
@@ -74,7 +67,7 @@ export function TeamPage() {
     },
     {
       name: 'Lucrezia Derossi',
-      role: 'Chief Marketing Officer (CMO)',
+      role: 'Reels Director',
       photo: LucreziaImg,
       quote: 'My name is Lu, I\'m a third-year Biological Chemistry co-op student with a passion for the pharmaceutical industry and hopes of contributing to future drug development.',
       funFact: 'As VP Marketing of GSU, I\'m excited to bring creativity and energy to our community and highlight all the great opportunities our club has to offer'
@@ -85,6 +78,13 @@ export function TeamPage() {
       photo: AkshayaImg,
       quote: 'Hi! My name is Akshaya, and I\'m a first year CCIT student.',
       funFact: 'I\'m excited to be joining GSU because it\'s a great opportunity to get involved on campus, meet new people, and contribute to meaningful projects that support students'
+    },
+    {
+      name: 'Mayank Agarwal',
+      role: 'Chief Marketing Officer (CMO)',
+      photo: TigerImg,
+      quote: 'Hey everyone, I\'m Tiger. A bold thinker who\'s obsessed with building startups that actually do something. My background\'s in strategy, marketing, and execution but my real focus is helping people turn ideas into high-impact ventures.',
+      funFact: 'I believe every student has at least one billion-dollar idea in them they just need the right environment to bring it out. That\'s what I\'m here to build'
     }
   ];
 
