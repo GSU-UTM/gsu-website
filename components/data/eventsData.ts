@@ -185,20 +185,21 @@ export const allEvents: Event[] = [
     ]
   },
   {
-    id: 'week11-coworking',
+    id: 'week11-case-competition',
     week: 11,
-    title: 'Co-Working Session',
+    title: 'Entrepreneurial Case Competition',
     date: 'November 12, 2025',
     dateObj: new Date('2025-11-12'),
-    totalDuration: '2 hours',
-    description: 'Final preparation session before the general meeting. Teams finalize their work.',
+    totalDuration: '3 hours (6:00 PM - 9:00 PM)',
+    description: 'Our flagship competition where student teams tackle real-world business challenges across 5 categories. Judged by industry professionals and founders. Top 3 teams win cash prizes!',
     semester: 1,
     activities: [
-      { name: 'Teams meet to work on startup and prepare for closing ceremony' },
-      { name: 'Work session 1', duration: '45 min' },
-      { name: 'Networking, snacks & chill', duration: '15 min' },
-      { name: 'Work session 2', duration: '45 min' },
-      { name: 'Large Group Discussion + Accountability Planning', duration: '15 min' }
+      { name: 'Check-in & Team Registration', duration: '15 min' },
+      { name: 'Opening Remarks & Competition Rules', duration: '15 min' },
+      { name: '5 Categories: Marketing, Operations, Data Analytics, HR, Sales' },
+      { name: 'Team Presentations (5 min each)', duration: '90 min' },
+      { name: 'Judge Deliberation & Networking', duration: '20 min' },
+      { name: 'Winners Announcement & Prizes', duration: '20 min' }
     ]
   },
   {
