@@ -168,38 +168,22 @@ export const allEvents: Event[] = [
     ]
   },
   {
-    id: 'week10-storytelling',
-    week: 10,
-    title: 'Workshop: Startup Storytelling',
-    date: 'November 5, 2025',
-    dateObj: new Date('2025-11-05'),
-    totalDuration: '2 hours',
-    description: 'Master the art of pitching. Learn business pitching and personal elevator pitches.',
-    semester: 1,
-    activities: [
-      { name: 'Startup storytelling' },
-      { name: 'Business Pitches + Personal Pitching' },
-      { name: 'Workshop', duration: '30 min' },
-      { name: 'Work on 2-5 min startup or personal 1 minute elevator pitches', duration: '1 hour' },
-      { name: 'Present pitches', duration: '30 min' }
-    ]
-  },
-  {
     id: 'week11-case-competition',
     week: 11,
-    title: 'Entrepreneurial Case Competition',
+    title: '🏆 Entrepreneurial Case Competition - FLAGSHIP EVENT',
     date: 'November 12, 2025',
     dateObj: new Date('2025-11-12'),
     totalDuration: '3 hours (6:00 PM - 9:00 PM)',
-    description: 'Our flagship competition where student teams tackle real-world business challenges across 5 categories. Judged by industry professionals and founders. Top 3 teams win cash prizes!',
+    description: '🔥 GSU\'s BIGGEST EVENT OF THE SEMESTER! Compete in real-world business challenges judged by industry leaders and founders. 10 teams across 5 categories battle for cash prizes. Network with professionals, showcase your skills, and prove you have what it takes to build the future.',
     semester: 1,
     activities: [
-      { name: 'Check-in & Team Registration', duration: '15 min' },
-      { name: 'Opening Remarks & Competition Rules', duration: '15 min' },
-      { name: '5 Categories: Marketing, Operations, Data Analytics, HR, Sales' },
-      { name: 'Team Presentations (5 min each)', duration: '90 min' },
-      { name: 'Judge Deliberation & Networking', duration: '20 min' },
-      { name: 'Winners Announcement & Prizes', duration: '20 min' }
+      { name: '🎯 5 Business Categories: Marketing, Operations, Data Analytics, HR, Sales' },
+      { name: '💰 Cash Prizes for Top 3 Teams' },
+      { name: '🎤 5-Minute Team Presentations' },
+      { name: '👔 Industry Professional Judges & Founders' },
+      { name: '🤝 Networking with Mentors & Peers' },
+      { name: '🍕 Food & Refreshments Provided' },
+      { name: '📊 Evaluated on Strategy, Innovation, Impact & Presentation' }
     ]
   },
   {
