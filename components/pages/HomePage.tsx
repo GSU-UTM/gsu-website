@@ -11,6 +11,9 @@ import {
   Heart,
 } from 'lucide-react';
 import { motion } from 'motion/react';
+import firstImage from '../../assets/first.JPG';
+import secondImage from '../../assets/second.JPG';
+import thirdImage from '../../assets/third.JPG';
 
 export function HomePage() {
   const stats = [
@@ -169,8 +172,8 @@ export function HomePage() {
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-12 aspect-square flex items-center justify-center">
-                  <Users className="h-48 w-48 text-orange-400/20" />
+                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl overflow-hidden aspect-square">
+                  <img src={firstImage} alt="GSU UTM community" className="w-full h-full object-cover" />
                 </div>
               </div>
             </motion.div>
@@ -185,8 +188,8 @@ export function HomePage() {
             >
               <div className="relative lg:order-1 order-2">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-12 aspect-square flex items-center justify-center">
-                  <Rocket className="h-48 w-48 text-purple-400/20" />
+                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl overflow-hidden aspect-square">
+                  <img src={secondImage} alt="GSU UTM workshop" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="lg:order-2 order-1">
@@ -247,8 +250,8 @@ export function HomePage() {
               </div>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl"></div>
-                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl p-12 aspect-square flex items-center justify-center">
-                  <Heart className="h-48 w-48 text-blue-400/20" />
+                <div className="relative bg-gradient-to-br from-gray-900 to-black border border-gray-800 rounded-3xl overflow-hidden aspect-square">
+                  <img src={thirdImage} alt="GSU UTM event" className="w-full h-full object-cover" />
                 </div>
               </div>
             </motion.div>

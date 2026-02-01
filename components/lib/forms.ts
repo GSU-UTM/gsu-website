@@ -1,5 +1,6 @@
 export const FORM_URLS = {
   join: "https://docs.google.com/forms/d/e/1FAIpQLSe3WDeDHYxvBjzTnV-vcmY7zrc7z2sD0on-gw410rinuQTZgQ/viewform",
+  exec: "https://forms.gle/4K3rQ3KSa33d7HYD9",
   speaker: "",
   partner: "",
   volunteer: "",
