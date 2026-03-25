@@ -8,6 +8,7 @@ import {
   Users,
   Calendar,
   Mail,
+  Mic2,
 } from 'lucide-react';
 interface NavigationProps {
   currentPage: string;
@@ -21,6 +22,7 @@ export function Navigation({ currentPage, onPageChange }: NavigationProps) {
   const navItems = [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'events', label: 'Events', icon: Calendar },
+    { id: 'speakers', label: 'Speakers', icon: Mic2 },
     { id: 'team', label: 'Team', icon: Users },
     { id: 'contact', label: 'Contact', icon: Mail },
   ];

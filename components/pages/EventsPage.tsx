@@ -44,7 +44,7 @@ export function EventsPage() {
                 }`}>
                   {event.title}
                 </h3>
-                <div className="flex items-center space-x-4 text-sm font-semibold">
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
                   <div className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}>
                     <Calendar className="h-4 w-4" />
                     <span>{event.date}</span>
@@ -53,7 +53,18 @@ export function EventsPage() {
                     <Clock className="h-4 w-4" />
                     <span>{event.totalDuration}</span>
                   </div>
+                  {event.location && (
+                    <div className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}>
+                      <MapPin className="h-4 w-4" />
+                      <span>{event.location}</span>
+                    </div>
+                  )}
                 </div>
+                {event.cohost && (
+                  <p className={`text-sm mt-1 ${isPast ? 'text-gray-500' : 'text-orange-400'}`}>
+                    Co-hosted with {event.cohost}
+                  </p>
+                )}
               </div>
             </div>
             {isPast && (
@@ -126,6 +137,20 @@ export function EventsPage() {
               ))}
             </div>
           </div>
+
+          {/* Registration Link */}
+          {event.registrationLink && !isPast && (
+            <div className="mt-6">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 font-bold"
+                onClick={() => window.open(event.registrationLink, '_blank', 'noopener,noreferrer')}
+              >
+                Register Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

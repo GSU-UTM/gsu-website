@@ -6,6 +6,7 @@ import { EventsPage } from './components/pages/EventsPage';
 // import { StartupsPage } from './components/pages/StartupsPage';
 import { StartupsNewPage as StartupsPage } from './components/pages/StartupsNewPage';
 import { TeamPage } from './components/pages/TeamPage';
+import { SpeakersPage } from './components/pages/SpeakersPage';
 import { ContactPage } from './components/pages/ContactPage';
 import {
   Menu,
@@ -16,11 +17,13 @@ import {
   Calendar,
   Mail,
   Rocket,
+  Mic2,
 } from 'lucide-react';
 
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'events', label: 'Events', icon: Calendar },
+  { id: 'speakers', label: 'Speakers', icon: Mic2 },
   { id: 'startups', label: 'Startups', icon: Rocket },
   { id: 'team', label: 'Team', icon: Users },
   { id: 'contact', label: 'Contact', icon: Mail },
@@ -39,6 +42,8 @@ export default function App() {
         return <EventsPage />;
       case 'startups':
         return <StartupsPage />;
+      case 'speakers':
+        return <SpeakersPage />;
       case 'team':
         return <TeamPage />;
       case 'contact':

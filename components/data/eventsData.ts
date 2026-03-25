@@ -24,6 +24,9 @@ export interface Event {
   activities: EventActivity[];
   semester: 1 | 2;
   speakers?: EventSpeaker[];
+  registrationLink?: string;
+  location?: string;
+  cohost?: string;
 }
 
 // Helper function to check if an event is in the past
@@ -202,6 +205,25 @@ export const allEvents: Event[] = [
     ]
   },
   // Semester 2 Events
+  {
+    id: 'sem2-pitch-night',
+    week: 5,
+    title: 'GSU x Enactus UTM Startup Pitches',
+    date: 'February 26, 2026',
+    dateObj: new Date('2026-02-26'),
+    totalDuration: '2 hours (6:00 PM - 8:00 PM)',
+    description: 'Got a startup idea you\'ve been thinking about but haven\'t said out loud yet? We\'re hosting a pitch night where students can present their startup ideas in front of other ambitious builders on campus. No judges in suits. No corporate fluff. Just real ideas, real feedback, and real conversations.',
+    semester: 2,
+    location: 'UTM IB-380',
+    cohost: 'Enactus UTM',
+    registrationLink: 'https://luma.com/r51h5gsz',
+    activities: [
+      { name: 'Live pitch presentations from students' },
+      { name: 'Structured pitch practice to refine your vision' },
+      { name: 'Direct feedback from other founders and builders' },
+      { name: 'High-signal networking with people who are actually building things' }
+    ]
+  },
   {
     id: 'sem2-week6-general-meeting',
     week: 6,
