@@ -1,9 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Calendar, Clock, Users, MapPin, ArrowRight, Instagram, Bell, Rocket, Lightbulb, Target, ChevronDown, ChevronUp } from 'lucide-react';
+import {
+  Calendar,
+  Clock,
+  Users,
+  MapPin,
+  ArrowRight,
+  Instagram,
+  Bell,
+  Rocket,
+  Lightbulb,
+  Target,
+  ChevronDown,
+  ChevronUp,
+  Building2,
+  TrendingUp,
+  Award,
+  Handshake,
+} from 'lucide-react';
 import { Button } from '../ui/button';
 import { FORM_URLS, openForm } from '../lib/forms';
-import { allEvents, getUpcomingEvents, getPastEvents, Event } from '../data/eventsData';
+import {
+  allEvents,
+  getUpcomingEvents,
+  getPastEvents,
+  Event,
+} from '../data/eventsData';
 
 export function EventsPage() {
   const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
@@ -16,7 +38,11 @@ export function EventsPage() {
     setPastEvents(getPastEvents(allEvents));
   }, []);
 
-  const renderEvent = (event: Event, index: number, isPast: boolean = false) => (
+  const renderEvent = (
+    event: Event,
+    index: number,
+    isPast: boolean = false,
+  ) => (
     <motion.div
       key={event.id}
       initial={{ opacity: 0, y: 30 }}
@@ -25,43 +51,65 @@ export function EventsPage() {
       viewport={{ once: true }}
       className="group relative"
     >
-      <div className={`absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-300`}></div>
-      <div className={`relative backdrop-blur-xl border rounded-3xl p-8 transform hover:scale-105 transition-all duration-300 hover:border-orange-500/30 ${
-        isPast ? 'bg-gray-900/40 border-gray-800/50 opacity-75' : 'bg-gray-900/60 border-gray-800'
-      }`}>
+      <div
+        className={`absolute inset-0 bg-gradient-to-br from-orange-500 to-red-500 rounded-3xl blur-xl opacity-0 group-hover:opacity-20 transition-all duration-300`}
+      ></div>
+      <div
+        className={`relative backdrop-blur-xl border rounded-3xl p-8 transform hover:scale-105 transition-all duration-300 hover:border-orange-500/30 ${
+          isPast
+            ? 'bg-gray-900/40 border-gray-800/50 opacity-75'
+            : 'bg-gray-900/60 border-gray-800'
+        }`}
+      >
         <div className="relative z-10">
           {/* Event Header */}
           <div className="flex items-start justify-between mb-6">
             <div className="flex items-center space-x-4">
-              <div className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
-                isPast ? 'bg-gray-700' : 'bg-gradient-to-br from-orange-500 to-red-500'
-              }`}>
-                <span className="text-white font-bold text-lg">W{event.week}</span>
+              <div
+                className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
+                  isPast
+                    ? 'bg-gray-700'
+                    : 'bg-gradient-to-br from-orange-500 to-red-500'
+                }`}
+              >
+                <span className="text-white font-bold text-lg">
+                  W{event.week}
+                </span>
               </div>
               <div>
-                <h3 className={`text-2xl mb-2 group-hover:text-orange-400 transition-colors duration-300 font-bold ${
-                  isPast ? 'text-gray-400' : 'text-white'
-                }`}>
+                <h3
+                  className={`text-2xl mb-2 group-hover:text-orange-400 transition-colors duration-300 font-bold ${
+                    isPast ? 'text-gray-400' : 'text-white'
+                  }`}
+                >
                   {event.title}
                 </h3>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm font-semibold">
-                  <div className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}>
+                  <div
+                    className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}
+                  >
                     <Calendar className="h-4 w-4" />
                     <span>{event.date}</span>
                   </div>
-                  <div className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}>
+                  <div
+                    className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}
+                  >
                     <Clock className="h-4 w-4" />
                     <span>{event.totalDuration}</span>
                   </div>
                   {event.location && (
-                    <div className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}>
+                    <div
+                      className={`flex items-center space-x-1 ${isPast ? 'text-gray-500' : 'text-gray-400'}`}
+                    >
                       <MapPin className="h-4 w-4" />
                       <span>{event.location}</span>
                     </div>
                   )}
                 </div>
                 {event.cohost && (
-                  <p className={`text-sm mt-1 ${isPast ? 'text-gray-500' : 'text-orange-400'}`}>
+                  <p
+                    className={`text-sm mt-1 ${isPast ? 'text-gray-500' : 'text-orange-400'}`}
+                  >
                     Co-hosted with {event.cohost}
                   </p>
                 )}
@@ -75,14 +123,18 @@ export function EventsPage() {
           </div>
 
           {/* Event Description */}
-          <p className={`mb-6 leading-relaxed font-semibold ${isPast ? 'text-gray-500' : 'text-gray-300'}`}>
+          <p
+            className={`mb-6 leading-relaxed font-semibold ${isPast ? 'text-gray-500' : 'text-gray-300'}`}
+          >
             {event.description}
           </p>
 
           {/* Guest Speakers */}
           {event.speakers && event.speakers.length > 0 && (
             <div className="mb-6">
-              <h4 className={`text-lg mb-4 flex items-center font-semibold ${isPast ? 'text-gray-500' : 'text-orange-500'}`}>
+              <h4
+                className={`text-lg mb-4 flex items-center font-semibold ${isPast ? 'text-gray-500' : 'text-orange-500'}`}
+              >
                 <Users className="h-4 w-4 mr-2" />
                 Guest Speakers
               </h4>
@@ -101,10 +153,14 @@ export function EventsPage() {
                         className="w-20 h-20 rounded-full object-cover mb-3 border-2 border-orange-500/50"
                       />
                     )}
-                    <p className={`font-bold text-sm mb-1 ${isPast ? 'text-gray-400' : 'text-white'}`}>
+                    <p
+                      className={`font-bold text-sm mb-1 ${isPast ? 'text-gray-400' : 'text-white'}`}
+                    >
                       {speaker.name}
                     </p>
-                    <p className={`text-xs ${isPast ? 'text-gray-600' : 'text-gray-400'}`}>
+                    <p
+                      className={`text-xs ${isPast ? 'text-gray-600' : 'text-gray-400'}`}
+                    >
                       {speaker.title}
                     </p>
                   </div>
@@ -115,7 +171,9 @@ export function EventsPage() {
 
           {/* Event Activities */}
           <div className="space-y-2">
-            <h4 className={`text-lg mb-3 flex items-center font-semibold ${isPast ? 'text-gray-500' : 'text-orange-500'}`}>
+            <h4
+              className={`text-lg mb-3 flex items-center font-semibold ${isPast ? 'text-gray-500' : 'text-orange-500'}`}
+            >
               <Target className="h-4 w-4 mr-2" />
               Session Breakdown
             </h4>
@@ -127,9 +185,13 @@ export function EventsPage() {
                     isPast ? 'bg-gray-800/30' : 'bg-gray-800/50'
                   }`}
                 >
-                  <span className={isPast ? 'text-gray-500' : 'text-gray-300'}>{activity.name}</span>
+                  <span className={isPast ? 'text-gray-500' : 'text-gray-300'}>
+                    {activity.name}
+                  </span>
                   {activity.duration && (
-                    <span className={`text-sm font-medium ${isPast ? 'text-gray-600' : 'text-orange-400'}`}>
+                    <span
+                      className={`text-sm font-medium ${isPast ? 'text-gray-600' : 'text-orange-400'}`}
+                    >
                       {activity.duration}
                     </span>
                   )}
@@ -144,7 +206,13 @@ export function EventsPage() {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600 px-8 py-4 rounded-2xl transform hover:scale-105 transition-all duration-300 font-bold"
-                onClick={() => window.open(event.registrationLink, '_blank', 'noopener,noreferrer')}
+                onClick={() =>
+                  window.open(
+                    event.registrationLink,
+                    '_blank',
+                    'noopener,noreferrer',
+                  )
+                }
               >
                 Register Now
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -188,8 +256,9 @@ export function EventsPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto leading-relaxed mb-8">
-              Join us for hands-on workshops, co-working sessions, and networking events designed
-              to accelerate your entrepreneurial journey at UTM.
+              Join us for hands-on workshops, co-working sessions, and
+              networking events designed to accelerate your entrepreneurial
+              journey at UTM.
             </p>
 
             <div className="inline-flex items-center gap-2 px-6 py-3 bg-orange-500/10 border border-orange-500/30 rounded-2xl">
@@ -203,9 +272,159 @@ export function EventsPage() {
                   className="underline hover:text-orange-200 transition-colors"
                 >
                   @gsu.utm
-                </a>
-                {' '}for latest updates
+                </a>{' '}
+                for latest updates
               </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Spring Business Fair - Coming Soon */}
+      <section className="relative py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 rounded-3xl blur-xl"></div>
+              <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-900/60 backdrop-blur-xl border border-orange-500/30 rounded-3xl p-8 lg:p-12 overflow-hidden">
+                <div className="absolute top-4 right-4 lg:top-6 lg:right-6">
+                  <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full shadow-lg animate-pulse">
+                    Coming May 1st, 2026
+                  </span>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+                  <div>
+                    <div className="flex items-center space-x-3 mb-4">
+                      <Building2 className="h-6 w-6 text-orange-400" />
+                      <span className="text-orange-400 tracking-wider uppercase font-semibold text-sm">
+                        GSU UTM Flagship Event
+                      </span>
+                    </div>
+
+                    <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+                      GSU Spring
+                      <br />
+                      <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+                        Business Fair
+                      </span>
+                    </h2>
+
+                    <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-400">
+                      <div className="flex items-center space-x-2">
+                        <Calendar className="h-4 w-4 text-orange-400" />
+                        <span>May 1st, 2026</span>
+                      </div>
+                      <div className="flex items-center space-x-2">
+                        <MapPin className="h-4 w-4 text-orange-400" />
+                        <span>University of Toronto Mississauga</span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-300 leading-relaxed mb-6">
+                      A showcase event for entrepreneurs from the University of
+                      Toronto and across Ontario. Participating entrepreneurs
+                      will have the opportunity to sell and/or present their
+                      products and services in a fair-style environment. Connect
+                      with potential investors, gain new customers, and expand
+                      your ventures.
+                    </p>
+
+                    <div className="flex flex-wrap gap-3">
+                      <a
+                        href="https://luma.com/user/usr-mELXS77OWK0UMVW"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-xl text-white text-sm font-bold transition-all duration-300 shadow-lg shadow-orange-500/30"
+                      >
+                        Register Now
+                        <ArrowRight className="h-4 w-4" />
+                      </a>
+                      <a
+                        href="https://www.instagram.com/gsu.utm/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-500/30 text-orange-400 rounded-lg hover:bg-orange-500/30 transition-colors text-sm font-semibold"
+                      >
+                        <Instagram className="h-4 w-4" />
+                        Follow @gsu.utm
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
+                      <TrendingUp className="h-5 w-5 text-orange-400 mr-2" />
+                      Event Goals
+                    </h3>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        {
+                          icon: Building2,
+                          label: 'UofT Companies',
+                          target: '20+',
+                        },
+                        {
+                          icon: Users,
+                          label: 'Expected Attendees',
+                          target: '500+',
+                        },
+                        {
+                          icon: Handshake,
+                          label: 'Confirmed Investors',
+                          target: '25+',
+                        },
+                        { icon: Award, label: 'Prize Money', target: '$10K+' },
+                      ].map((goal, index) => {
+                        const Icon = goal.icon;
+                        return (
+                          <div
+                            key={index}
+                            className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-4 hover:border-orange-500/30 transition-colors"
+                          >
+                            <Icon className="h-5 w-5 text-orange-400 mb-2" />
+                            <p className="text-2xl font-bold text-white">
+                              {goal.target}
+                            </p>
+                            <p className="text-xs text-gray-400">
+                              {goal.label}
+                            </p>
+                          </div>
+                        );
+                      })}
+                    </div>
+
+                    <div className="mt-6 p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl">
+                      <h4 className="text-sm font-semibold text-orange-400 mb-2">
+                        Opportunities for:
+                      </h4>
+                      <ul className="space-y-1 text-sm text-gray-300">
+                        <li className="flex items-center space-x-2">
+                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                          <span>UofT-affiliated startups & companies</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                          <span>Ontario-based businesses</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                          <span>Investors & venture capital</span>
+                        </li>
+                        <li className="flex items-center space-x-2">
+                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
+                          <span>Entrepreneurs & innovators</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -229,12 +448,15 @@ export function EventsPage() {
                 </span>
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our comprehensive program designed to take you from idea to launch
+                Our comprehensive program designed to take you from idea to
+                launch
               </p>
             </motion.div>
 
             <div className="grid gap-8">
-              {upcomingEvents.map((event, index) => renderEvent(event, index, false))}
+              {upcomingEvents.map((event, index) =>
+                renderEvent(event, index, false),
+              )}
             </div>
           </div>
         </section>
@@ -268,7 +490,9 @@ export function EventsPage() {
 
             {showPastEvents && (
               <div className="grid gap-8">
-                {pastEvents.map((event, index) => renderEvent(event, index, true))}
+                {pastEvents.map((event, index) =>
+                  renderEvent(event, index, true),
+                )}
               </div>
             )}
           </div>
@@ -294,7 +518,8 @@ export function EventsPage() {
             </h2>
 
             <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Join our community today and be the first to know about upcoming events, workshops, and opportunities.
+              Join our community today and be the first to know about upcoming
+              events, workshops, and opportunities.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -311,7 +536,9 @@ export function EventsPage() {
                 variant="outline"
                 size="lg"
                 className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 rounded-2xl transition-all duration-300 text-lg font-semibold"
-                onClick={() => window.open('https://www.instagram.com/gsu.utm/', '_blank')}
+                onClick={() =>
+                  window.open('https://www.instagram.com/gsu.utm/', '_blank')
+                }
               >
                 <Instagram className="mr-2 h-5 w-5" />
                 Follow Us
