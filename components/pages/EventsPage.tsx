@@ -8,33 +8,24 @@ import {
   ArrowRight,
   Instagram,
   Bell,
-  Rocket,
-  Lightbulb,
   Target,
   ChevronDown,
   ChevronUp,
-  Building2,
-  TrendingUp,
-  Award,
-  Handshake,
 } from 'lucide-react';
 import { Button } from '../ui/button';
 import { FORM_URLS, openForm } from '../lib/forms';
 import {
   allEvents,
-  getUpcomingEvents,
   getPastEvents,
   Event,
 } from '../data/eventsData';
 
 export function EventsPage() {
-  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
   const [pastEvents, setPastEvents] = useState<Event[]>([]);
   const [showPastEvents, setShowPastEvents] = useState(false);
 
   useEffect(() => {
     // Update events on component mount
-    setUpcomingEvents(getUpcomingEvents(allEvents));
     setPastEvents(getPastEvents(allEvents));
   }, []);
 
@@ -280,187 +271,13 @@ export function EventsPage() {
         </div>
       </section>
 
-      {/* Spring Business Fair - Coming Soon */}
-      <section className="relative py-20 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 via-red-500/10 to-pink-500/10 rounded-3xl blur-xl"></div>
-              <div className="relative bg-gradient-to-br from-gray-900/80 to-gray-900/60 backdrop-blur-xl border border-orange-500/30 rounded-3xl p-8 lg:p-12 overflow-hidden">
-                <div className="absolute top-4 right-4 lg:top-6 lg:right-6">
-                  <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-bold rounded-full shadow-lg animate-pulse">
-                    Coming May 1st, 2026
-                  </span>
-                </div>
-
-                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-                  <div>
-                    <div className="flex items-center space-x-3 mb-4">
-                      <Building2 className="h-6 w-6 text-orange-400" />
-                      <span className="text-orange-400 tracking-wider uppercase font-semibold text-sm">
-                        GSU UTM Flagship Event
-                      </span>
-                    </div>
-
-                    <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
-                      GSU Spring
-                      <br />
-                      <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                        Business Fair
-                      </span>
-                    </h2>
-
-                    <div className="flex flex-wrap items-center gap-4 mb-6 text-sm text-gray-400">
-                      <div className="flex items-center space-x-2">
-                        <Calendar className="h-4 w-4 text-orange-400" />
-                        <span>May 1st, 2026</span>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        <MapPin className="h-4 w-4 text-orange-400" />
-                        <span>University of Toronto Mississauga</span>
-                      </div>
-                    </div>
-
-                    <p className="text-gray-300 leading-relaxed mb-6">
-                      A showcase event for entrepreneurs from the University of
-                      Toronto and across Ontario. Participating entrepreneurs
-                      will have the opportunity to sell and/or present their
-                      products and services in a fair-style environment. Connect
-                      with potential investors, gain new customers, and expand
-                      your ventures.
-                    </p>
-
-                    <div className="flex flex-wrap gap-3">
-                      <a
-                        href="https://luma.com/user/usr-mELXS77OWK0UMVW"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-xl text-white text-sm font-bold transition-all duration-300 shadow-lg shadow-orange-500/30"
-                      >
-                        Register Now
-                        <ArrowRight className="h-4 w-4" />
-                      </a>
-                      <a
-                        href="https://www.instagram.com/gsu.utm/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-orange-500/20 border border-orange-500/30 text-orange-400 rounded-lg hover:bg-orange-500/30 transition-colors text-sm font-semibold"
-                      >
-                        <Instagram className="h-4 w-4" />
-                        Follow @gsu.utm
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="space-y-4">
-                    <h3 className="text-lg font-semibold text-white mb-4 flex items-center">
-                      <TrendingUp className="h-5 w-5 text-orange-400 mr-2" />
-                      Event Goals
-                    </h3>
-                    <div className="grid grid-cols-2 gap-3">
-                      {[
-                        {
-                          icon: Building2,
-                          label: 'UofT Companies',
-                          target: '20+',
-                        },
-                        {
-                          icon: Users,
-                          label: 'Expected Attendees',
-                          target: '500+',
-                        },
-                        {
-                          icon: Handshake,
-                          label: 'Confirmed Investors',
-                          target: '25+',
-                        },
-                        { icon: Award, label: 'Prize Money', target: '$10K+' },
-                      ].map((goal, index) => {
-                        const Icon = goal.icon;
-                        return (
-                          <div
-                            key={index}
-                            className="bg-gray-800/50 border border-gray-700/50 rounded-xl p-4 hover:border-orange-500/30 transition-colors"
-                          >
-                            <Icon className="h-5 w-5 text-orange-400 mb-2" />
-                            <p className="text-2xl font-bold text-white">
-                              {goal.target}
-                            </p>
-                            <p className="text-xs text-gray-400">
-                              {goal.label}
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-
-                    <div className="mt-6 p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl">
-                      <h4 className="text-sm font-semibold text-orange-400 mb-2">
-                        Opportunities for:
-                      </h4>
-                      <ul className="space-y-1 text-sm text-gray-300">
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
-                          <span>UofT-affiliated startups & companies</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
-                          <span>Ontario-based businesses</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
-                          <span>Investors & venture capital</span>
-                        </li>
-                        <li className="flex items-center space-x-2">
-                          <span className="w-1.5 h-1.5 bg-orange-400 rounded-full"></span>
-                          <span>Entrepreneurs & innovators</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Upcoming Events Schedule */}
-      {upcomingEvents.length > 0 && (
-        <section className="relative py-20 lg:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                <span className="text-white">This Semester's</span>{' '}
-                <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                  Schedule
-                </span>
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Our comprehensive program designed to take you from idea to
-                launch
-              </p>
-            </motion.div>
-
-            <div className="grid gap-8">
-              {upcomingEvents.map((event, index) =>
-                renderEvent(event, index, false),
-              )}
-            </div>
-          </div>
-        </section>
-      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {renderEvent(
+          allEvents.find((e) => e.id === 'ai-startup-competition')!,
+          0,
+          false,
+        )}
+      </div>
 
       {/* Past Events Section */}
       {pastEvents.length > 0 && (

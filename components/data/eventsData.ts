@@ -204,6 +204,26 @@ export const allEvents: Event[] = [
       { name: 'Check in with members and ask for their feedback' }
     ]
   },
+  // Semester 1 (2026-2027) Events
+  {
+    id: 'ai-startup-competition',
+    week: 2,
+    title: '🤖 GSU AI Startup Competition - FLAGSHIP EVENT',
+    date: 'September 19, 2026',
+    dateObj: new Date('2026-09-19'),
+    totalDuration: '6 hours (10:00 AM - 4:00 PM)',
+    description: "Canada's next groundbreaking AI startup could begin right here. Sixteen selected teams step into a Shark Tank-style environment to pitch their AI-driven ventures before a panel of industry professionals, founders, investors, and technology leaders. Compete for a cash prize and the title of GSU AI Startup Competition Champion.",
+    semester: 1,
+    location: 'University of Toronto Mississauga',
+    registrationLink: 'https://luma.com/4gghfflq',
+    activities: [
+      { name: '🎯 Shark Tank-style AI Startup Pitches' },
+      { name: '👥 16 Selected Teams Competing' },
+      { name: '💰 Cash Prizes for Winners' },
+      { name: '🎤 Panel of Industry Professionals & Investors' },
+      { name: '🤝 Networking with Founders & Tech Leaders' }
+    ]
+  },
   // Semester 2 Events
   {
     id: 'sem2-pitch-night',

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { HomePage } from './components/pages/HomePage';
 import { ProgramsPage } from './components/pages/ProgramsPage';
@@ -8,6 +8,7 @@ import { StartupsNewPage as StartupsPage } from './components/pages/StartupsNewP
 import { TeamPage } from './components/pages/TeamPage';
 import { SpeakersPage } from './components/pages/SpeakersPage';
 import { ContactPage } from './components/pages/ContactPage';
+import { EventModal } from './components/EventModal';
 import {
   Menu,
   X,
@@ -31,6 +32,11 @@ const navItems = [
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [popupOpen, setPopupOpen] = useState(false);
+
+  useEffect(() => {
+    setPopupOpen(true);
+  }, []);
 
   const renderPage = () => {
     switch (currentPage) {
@@ -61,6 +67,7 @@ export default function App() {
         showText={true}
       />
       {renderPage()}
+      <EventModal open={popupOpen} onClose={() => setPopupOpen(false)} />
     </div>
   );
 }

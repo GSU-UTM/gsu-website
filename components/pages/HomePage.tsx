@@ -10,8 +10,6 @@ import {
   Zap,
   Heart,
   Building2,
-  Clock,
-  Instagram,
   Sparkles,
   Star,
 } from 'lucide-react';
@@ -20,7 +18,7 @@ import firstImage from '../../assets/first.JPG';
 import secondImage from '../../assets/second.JPG';
 import thirdImage from '../../assets/third.JPG';
 
-function CountdownTimer() {
+function CountdownTimer({ targetDate = '2026-09-19T10:00:00' }: { targetDate?: string }) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -29,11 +27,11 @@ function CountdownTimer() {
   });
 
   useEffect(() => {
-    const targetDate = new Date('2026-05-01T17:00:00').getTime();
+    const target = new Date(targetDate).getTime();
 
     const calculateTimeLeft = () => {
       const now = new Date().getTime();
-      const difference = targetDate - now;
+      const difference = target - now;
 
       if (difference > 0) {
         setTimeLeft({
@@ -50,7 +48,7 @@ function CountdownTimer() {
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   return (
     <div className="flex justify-center gap-3 sm:gap-4">
@@ -159,7 +157,7 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Spring Business Fair Featured Section */}
+      {/* AI Startup Competition Featured Section */}
       <section className="relative py-8 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -183,16 +181,16 @@ export function HomePage() {
                         <span>Flagship Event</span>
                       </div>
                       <h3 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">
-                        GSU Spring
+                        GSU AI Startup
                         <br />
                         <span className="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
-                          Business Fair
+                          Competition
                         </span>
                       </h3>
                       <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mt-4 text-sm text-gray-400">
                         <span className="flex items-center gap-1">
                           <Calendar className="h-4 w-4 text-orange-400" />
-                          May 1st, 2026
+                          September 19, 2026
                         </span>
                         <span className="hidden sm:inline">•</span>
                         <span className="flex items-center gap-1">
@@ -214,11 +212,11 @@ export function HomePage() {
                     <div className="flex-shrink-0 text-center lg:text-right lg:w-1/4">
                       <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-white font-bold mb-4 shadow-lg shadow-orange-500/30">
                         <Star className="h-4 w-4" />
-                        <span>Applications Open</span>
+                        <span>Shark Tank Style</span>
                       </div>
                       <div className="flex flex-col sm:flex-row lg:flex-col gap-2 justify-center">
                         <a
-                          href="https://luma.com/user/usr-mELXS77OWK0UMVW"
+                          href="https://luma.com/4gghfflq"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-xl text-white text-sm font-bold transition-all duration-300 shadow-lg shadow-orange-500/30"
@@ -234,13 +232,13 @@ export function HomePage() {
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
                       {[
                         {
-                          icon: Building2,
-                          number: '20+',
-                          label: 'UofT Companies',
+                          icon: Users,
+                          number: '16',
+                          label: 'Selected Teams',
                         },
-                        { icon: Users, number: '500+', label: 'Attendees' },
-                        { icon: Rocket, number: '25+', label: 'Investors' },
-                        { icon: Star, number: '$10K+', label: 'Prize Money' },
+                        { icon: Star, number: 'Cash', label: 'Prizes' },
+                        { icon: Rocket, number: '1', label: 'Champion' },
+                        { icon: Building2, number: '1', label: 'AI-Focused' },
                       ].map((stat, index) => {
                         const Icon = stat.icon;
                         return (
